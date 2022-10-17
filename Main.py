@@ -14,15 +14,15 @@ def insert(root, new_value) -> BinaryTreeNode:
     # Write your code here
     if self.data:
             if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)
+                if self.left_child is None:
+                    self.left_child = Node(data)
                 else:
-                    self.left.insert(data)
+                    self.left_child.insert(data)
             elif data > self.data:
-                if self.right is None:
-                    self.right = Node(data)
+                if self.right_child is None:
+                    self.right_child = Node(data)
                 else:
-                    self.right.insert(data)
+                    self.right_child.insert(data)
         else:
             self.data = data
 
@@ -32,9 +32,9 @@ def inorder(root) -> None:
     if (root==0):
         return
     else:
-        print(inorder(root.left))
+        print(inorder(root.left_child))
         print(root.data)
-        print(inorder(root.right))
+        print(inorder(root.right_child))
 
 
 def preorder(root) -> None:
@@ -43,8 +43,8 @@ def preorder(root) -> None:
         return
     else:
         print(root.data)
-        print(preorder(root.left))
-        print(preorder(root.right))
+        print(preorder(root.left_child))
+        print(preorder(root.right_child))
 
 
 def postorder(root) -> None:
@@ -52,8 +52,8 @@ def postorder(root) -> None:
     if (root==0):
         return
     else:
-        print(postorder(root.left))
-        print(postorder(root.right))
+        print(postorder(root.left_child))
+        print(postorder(root.right_child))
         print(root.data)
 
 
