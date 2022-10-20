@@ -12,46 +12,46 @@ def insert(root, new_value) -> BinaryTreeNode:
         Finally, return the root.
         """
     # Write your code here
-    if data:
-            if data < self.data:
-                if self.left_child is None:
-                    self.left_child = Node(data)
-                else:
-                    self.left_child.insert(data)
-            elif data > self.data:
-                if self.right_child is None:
-                    self.right_child = Node(data)
-                else:
-                    self.right_child.insert(data)
+    if (root == None):
+        root = BinaryTreeNode(new_value)
+        return root
+    else:
+        if root.data > new_value:
+            if root.left_child is None:
+                new_node = BinaryTreeNode(new_value)
+                root.left_child = new_node
+            else:
+                insert(root.left_child,new_value)
+
+        else:
+            if root.right_child is None:
+                new_node = BinaryTreeNode(new_value)
+                root.right_child = new_node
+            else:
+                insert(root.right_child,new_value)
 
 
 def inorder(root) -> None:
     # Write your code here
-    if (root==0):
-        return
-    else:
-        print(inorder(root.left_child))
+    if root:
+        inorder(inorder(root.left_child))
         print(root.data)
-        print(inorder(root.right_child))
+        inorder(inorder(root.right_child))
 
 
 def preorder(root) -> None:
     # Write your code here
-    if (root==0):
-        return
-    else:
+    if root:
         print(root.data)
-        print(preorder(root.left_child))
-        print(preorder(root.right_child))
+        preorder(preorder(root.left_child))
+        preorder(preorder(root.right_child))
 
 
 def postorder(root) -> None:
     # Write your code here
-    if (root==0):
-        return
-    else:
-        print(postorder(root.left_child))
-        print(postorder(root.right_child))
+    if root:
+        postorder(postorder(root.left_child))
+        postorder(postorder(root.right_child))
         print(root.data)
 
 
