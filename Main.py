@@ -31,30 +31,27 @@ def inorder(root) -> None:
     # Write your code here
     if root is None:
         return
-    else:
-        inorder(root.left_child)
-        print(root.data, end = "")
-        inorder(root.right_child)
+    inorder(root.left_child)
+    print(root.data, end = " ")
+    inorder(root.right_child)
 
 
 def preorder(root) -> None:
     # Write your code here
     if root is None:
         return
-    else:
-        print(root.data, end = "")
-        preorder(root.left_child)
-        preorder(root.right_child)
+    print(root.data, end = " ")
+    preorder(root.left_child)
+    preorder(root.right_child)
 
 
 def postorder(root) -> None:
     # Write your code here
     if root is None:
         return
-    else:
-        postorder(root.left_child)
-        postorder(root.right_child)
-        print(root.data, end = "")
+    postorder(root.left_child)
+    postorder(root.right_child)
+    print(root.data, end = " ")
 
 
 # Do not change the following code
